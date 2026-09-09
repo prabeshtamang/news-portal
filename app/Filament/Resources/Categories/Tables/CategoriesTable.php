@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class CategoriesTable
@@ -19,8 +20,8 @@ class CategoriesTable
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
-                IconColumn::make('status')
-                    ->boolean(),
+                ToggleColumn::make('status'),
+
                 TextColumn::make('meta_title')
                     ->searchable(),
                 TextColumn::make('created_at')

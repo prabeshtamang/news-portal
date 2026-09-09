@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class ArticlesTable
@@ -17,15 +18,15 @@ class ArticlesTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                ->limit(50)
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                IconColumn::make('status')
-                    ->boolean(),
+
+                ToggleColumn::make('status'),
                 ImageColumn::make('image'),
                 TextColumn::make('author_name')
                     ->searchable(),
                 TextColumn::make('meta_title')
+                ->limit(50)
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
