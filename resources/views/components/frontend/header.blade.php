@@ -61,16 +61,9 @@
             <!-- ===== NAVIGATION (desktop) ===== -->
             <nav class="hidden sm:flex space-x-6 text-sm font-medium text-gray-600 border-t border-gray-100 py-2.5">
                 <a href="#" class="text-red-700 font-semibold border-b-2 border-red-700 pb-1">Home</a>
-                <a href="#" class="hover:text-red-600 transition">Politics</a>
-                <a href="#" class="hover:text-red-600 transition">Business</a>
-                <a href="#" class="hover:text-red-600 transition">Sports</a>
-                <a href="#" class="hover:text-red-600 transition">Opinion</a>
-                <a href="#" class="hover:text-red-600 transition">Entertainment</a>
-                <a href="#" class="hover:text-red-600 transition">Technology</a>
-                <a href="#" class="hover:text-red-600 transition">World</a>
-                <a href="#" class="hover:text-red-600 transition">More <i
-                        class="fas fa-chevron-down text-[10px] ml-0.5"></i></a>
-            </nav>
+                {{-- @foreach ($categories as $category)
+                    <a href="#" class="text-red-700 font-semibold border-b-2 border-red-700 pb-1">Home</a>
+                @endforeach --}}
 
 
 
