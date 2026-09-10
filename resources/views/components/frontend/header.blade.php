@@ -15,10 +15,10 @@
 
     <!-- ===== HEADER ===== -->
     <header class="bg-white border-b border-gray-200 shadow-sm">
-        <div >
+        <div>
 
             <!-- top row: logo + right items -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6" >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
                 <div class="flex items-center text-center justify-between h-16">
 
                     <!-- logo / brand -->
@@ -34,9 +34,13 @@
             </div>
 
             <nav class=" bg-(--primary)">
-                <div class="flex items-center justify-center justify-between container pt-6 pb-6">
-                    
+                <div class="flex items-center  justify-between container pt-6 pb-6">
 
+                    <a href="#" class="text-white font-bold text-xl hover:text-red-600 duration-300 pb-1">Home</a>
+                    @foreach ($categories as $category)
+                        <a href="#"
+                            class="text-white font-bold text-xl hover:text-red-600 duration-300 pb-1">{{ $category->title }}</a>
+                    @endforeach
                     <div>
                         <form class="">
                             <label for="search"
