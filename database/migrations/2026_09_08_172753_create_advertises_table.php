@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('banner_link')->nullable();
             $table->boolean('status')->default(true);
             $table->string('company_name')->nullable();
+            $table->date('expiry_date')->nullable();
             $table->timestamps();
         });
     }

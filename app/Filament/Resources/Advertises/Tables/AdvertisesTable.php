@@ -23,6 +23,9 @@ class AdvertisesTable
                 TextColumn::make('banner_link')
                     ->searchable(),
                 ToggleColumn::make('status'),
+                TextColumn::make('expiry_date')
+                    ->date()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

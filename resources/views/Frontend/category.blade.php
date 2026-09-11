@@ -1,0 +1,60 @@
+<x-frontend.layout>
+
+    <section class="container mx-auto pt-10">
+        <div class="grid grid-cols-3 ">
+            <div class="col-span-2">
+                @foreach ($category->articles()->latest()->get() as $article)
+                    <div class=" pt-4 pr-4 gap-6 mb-8">
+
+                        {{-- Articles --}}
+                        <div class="col-span-2">
+
+                            <div class="flex gap-6 border-b pb-6">
+
+                                {{-- Article Image --}}
+                                <div class="w-2/5 overflow-hidden">
+                                    <a href="">
+                                        <img class="h-[200px] w-full object-cover"
+                                            src="{{ asset(Storage::url($article->image)) }}" alt="{{ $article->title }}">
+                                    </a>
+                                </div>
+
+                                {{-- Article Content --}}
+                                <div class="w-3/5 pt-4">
+
+                                    <a href="">
+                                        <h1 class="text-lg font-semibold mb-3">
+                                            {{ $article->title }}
+                                        </h1>
+                                    </a>
+
+                                    <a href="">
+                                        <p class="text-gray-600 leading-relaxed">
+                                            {{ Str::limit(strip_tags($article->content), 200, '.....') }}
+                                        </p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+            {{-- Advertisement --}}
+            <div class="col-span-1">
+
+                @foreach ($advertises as $advertise)
+                    <div>
+                        <a href="{{ $advertise->banner_link }}">
+                            <img class="w-full h-auto" src="{{ asset(Storage::url($advertise->banner_image)) }}"
+                                alt="Advertisement">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+    </section>
+
+</x-frontend.layout>

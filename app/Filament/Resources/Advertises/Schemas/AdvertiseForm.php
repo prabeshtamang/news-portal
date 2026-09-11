@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Advertises\Schemas;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -20,7 +21,9 @@ class AdvertiseForm
                 FileUpload::make('banner_image')
                     ->image()
                     ->columnSpanFull(),
-
+                DatePicker::make('expiry_date')
+                    ->label('Expiry Date')
+                    ->nullable(),
 
             ]);
     }
