@@ -20,7 +20,7 @@
                                 </div>
 
                                 {{-- Article Content --}}
-                                <div class="w-3/5 pt-4">
+                                <div class="w-3/5 pt-2">
 
                                     <a href="">
                                         <h1 class="text-lg font-semibold mb-3">
@@ -33,7 +33,12 @@
                                             {{ Str::limit(strip_tags($article->content), 200, '.....') }}
                                         </p>
                                     </a>
-
+                                    <div>
+                                        <span class="font-semibold">
+                                            {{ toNepaliDate($article->created_at->format('Y-m-d')) }}
+                                        </span><br>
+                                        <a class="text-sm text-(--primary) pt-2" href=""><i class="fa-solid fa-hand-point-up"></i> पुरा पढ्नुहोस्</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -45,8 +50,8 @@
             <div class="col-span-1">
 
                 @foreach ($advertises as $advertise)
-                    <div>
-                        <a href="{{ $advertise->banner_link }}">
+                    <div class="p-5 ">
+                        <a href="{{ $advertise->banner_link }}" target="-blank">
                             <img class="w-full h-auto" src="{{ asset(Storage::url($advertise->banner_image)) }}"
                                 alt="Advertisement">
                         </a>

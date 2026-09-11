@@ -31,7 +31,7 @@ class PageController extends Controller
     public function category($slug)
     {
         $category=Category::where("slug",$slug)->latest()->first();
-        $advertises = Advertise::all();
+        $advertises = Advertise::where("expiry_date",">=",time())->get();
         return view('frontend.category', compact('category', 'advertises'));
     }
 }
