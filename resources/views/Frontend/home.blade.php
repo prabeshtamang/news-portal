@@ -21,7 +21,7 @@
 
     <section class="container ">
         <div>
-            @foreach ($categories as $category)
+            @foreach ($my_categories as $category)
                 <div>
                     <h1 class="text-4xl font-bold text-(--primary) pt-4">
                         {{ $category->title }}

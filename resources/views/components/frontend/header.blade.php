@@ -43,7 +43,7 @@
 
                     <a href="{{ route('home') }}"
                         class="text-white font-bold text-xl hover:text-red-600 duration-300 pb-1">Home</a>
-                    @foreach ($categories as $category)
+                    @foreach ($my_categories as $category)
                         <a href="{{ route('category', $category->slug) }}"
                             class="text-white font-bold text-xl hover:text-red-600 duration-300 pb-1">{{ $category->title }}</a>
                     @endforeach

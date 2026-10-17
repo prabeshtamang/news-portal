@@ -15,10 +15,9 @@ class PageController extends Controller
     {
         $categories = Category::where('status', true)->get();
         View::share([
-            "categories" => $categories,
+            "my_categories" => $categories,
         ]);
     }
-
 
 
     public function index()
