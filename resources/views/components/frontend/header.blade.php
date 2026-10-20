@@ -38,6 +38,7 @@
                 </div>
             </div>
 
+
             <nav class=" bg-(--primary)">
                 <div class="flex items-center  justify-between container pt-6 pb-6">
 
@@ -47,8 +48,12 @@
                         <a href="{{ route('category', $category->slug) }}"
                             class="text-white font-bold text-xl hover:text-red-600 duration-300 pb-1">{{ $category->title }}</a>
                     @endforeach
+
+
+                    {{-- Search --}}
+
                     <div>
-                        <form class="">
+                        <form class="" action="{{ route('search') }}" method="GET">
                             <label for="search"
                                 class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
                             <div class="relative">
@@ -59,10 +64,10 @@
                                             d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <input type="search" id="search"
+                                <input type="search" id="search" name="q"
                                     class="block w-full p-3 ps-9 bg-red-100 border border-default-medium text-heading text-black text-sm rounded-lg focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
                                     placeholder="Search" required />
-                                <button type="button"
+                                <button type="submit"
                                     class="absolute end-1.5 bottom-1.5 text-black bg-brand hover:bg-red-500 box-border border border-black focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
                             </div>
                         </form>

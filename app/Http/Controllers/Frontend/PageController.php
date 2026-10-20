@@ -29,8 +29,16 @@ class PageController extends Controller
 
     public function category($slug)
     {
-        $category=Category::where("slug",$slug)->latest()->first();
-        $advertises = Advertise::where("expiry_date",">=",time())->get();
+        $category = Category::where("slug", $slug)->latest()->first();
+        $advertises = Advertise::where("expiry_date", ">=", time())->get();
         return view('frontend.category', compact('category', 'advertises'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+        $articles = Article::where('title', 'like', "%$query%")->latest()->get();
+        $advertises = Advertise::where("expiry_date", ">=", time())->get();
+        return view('frontend.search', compact('articles', 'advertises', 'query'));
     }
 }
